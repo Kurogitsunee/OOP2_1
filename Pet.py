@@ -11,7 +11,7 @@ class Pet():
     def name(self, name):
         self.__name = name
 
-    def say_pet(self):
+    def say(self):
         print("РРР")
 
 
@@ -20,7 +20,7 @@ class Cat(Pet):
     def __init__(self, name):
         super().__init__(name)
 
-    def say_cat(self):
+    def say(self):
         print("Мяу")
 
 
@@ -29,7 +29,7 @@ class Fox(Pet):
     def __init__(self, name):
         super().__init__(name)
 
-    def say_fox(self):
+    def say(self):
         print("Фыр-фыр")
 
 
@@ -41,18 +41,16 @@ class Hybrid(Cat, Fox):
 
 pet = Pet("Rex")
 print("Instance of class Pet was created with name Rex. It says:")
-pet.say_pet()
+pet.say()
 
 fox = Fox("Alice")
 print("Instance of class Fox was created with name Alice:")
-fox.say_fox()
+fox.say()
 
 cat = Cat("Roxy")
 print("Instance of class Cat was created with name Roxy:")
-cat.say_cat()
+cat.say()
 
 hybrid = Hybrid("Tucker")
-print("Instance of class Hybrid was created with name Tucker:")
-hybrid.say_pet()
-hybrid.say_cat()
-hybrid.say_fox()
+print("Instance of class Hybrid was created with name Tucker (it says what it's first parent - Cat - says):")
+hybrid.say()
